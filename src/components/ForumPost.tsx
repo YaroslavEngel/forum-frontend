@@ -5,10 +5,12 @@ interface PostCardProps {
 }
 
 function PostCard({ post }: PostCardProps) {
+  const authorName = post.author?.email ?? 'Unknown';
+
   return (
     <article className="post-card">
       <div className="post-card__meta">
-        <span className="post-card__tag">{post.category}</span>
+        <span className="post-card__tag">{post.category.name}</span>
         <span className="post-card__id">#{post.id}</span>
       </div>
 
@@ -16,8 +18,10 @@ function PostCard({ post }: PostCardProps) {
       <p className="post-card__content">{post.content}</p>
 
       <footer className="post-card__footer">
-        <span className="post-card__avatar">{post.author.charAt(0)}</span>
-        <span className="post-card__author">{post.author}</span>
+        <span className="post-card__avatar">
+          {authorName.charAt(0).toUpperCase()}
+        </span>
+        <span className="post-card__author">{authorName}</span>
       </footer>
     </article>
   );

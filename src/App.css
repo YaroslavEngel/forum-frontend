@@ -182,3 +182,20 @@
     border-right-color: var(--border);
   }
 }
+
+.status {
+  margin-top: 2rem;
+  padding: 2rem 1.5rem;
+  text-align: center;
+  color: var(--muted);
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+
+.status--error {
+  color: #b91c1c;
+  background: #fef2f2;
+  border-color: #fecaca;
+}
